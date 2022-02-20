@@ -1,0 +1,37 @@
+Funcionalidades :
+Todas as funcionalidades solicitadas na descrição do trabalho foram implementadas.
+Para compilar e executar :
+gcc aplicacao.c -o executavel -lpthread
+./executavel
+
+Quando o programa é executado na primeira vez é mostrado na tela um menu como segue abaixo.
+[1]Lista de usuários da RCA
+[2]Lista de arquivos dos usuarios
+[3]Baixar Aquivos de um servidor
+O programa fica esperando uma entrada, sendo um numero correspondente ao menu.
+Opção 1 : todos os servidores que estiverem executando em máquinas distintas cada um retornarão
+o endereço de IP local e real para a maquina que solicitou e salvara em arquivo os log de
+informação. O endereço ip de cada servidor é impresso na tela de quem solicitou a opção .
+É criado um arquivo chamado log.txt onde o programa armazena o log das solicitações(quando o
+o programa esta na característica de servidor).
+Opção 2 : todos o sevidores retornarão a lista de arquivos contido em seu diretorio corrente(o
+diretorio onde esta o executavel da aplicação)
+Obs.: O servidor retorna um buffer de tamanho maximo de 1000
+O servidor começa armazenar o nome dos arquivos em um vetor, e se esse vetor passar do tamanho
+1000 um erro ocorrerá. Para diretorios que hospeda muitos arquivos ocorrera falha de
+segmentação(pois o vetor acaba estourando).
+Se necessario listar nome de arquivos para diretorio muito grande por favor setar a macro abaixo
+com valor maior.
+#define BUFFSIZE 1000
+Opção 3:
+solicita o usuário dititar o endereco de IP do servidor.
+solicita o usuário a digitar o nome do arquivo(consideramos apenas arquivo texto).
+Consideramos apenas arquivos em texto para download.
+O conteúdo do arquivo também não pode ter mais de 1000 caracteres.
+Caso estrapole ocorrerá falha de segmentação.
+Obsevações :
+Consideramos os arquivos a serem baixados como arquivos em texto.
+O conteudo do arquivo para download não pode ser maior que 1000 caracteres
+Se necessário baixar arquivos maiores por favor setar a macro com valor maior
+#define BUFFSIZE 1000
+É criado um arquivo log.txt onde o servidor fica registrando as requisições
